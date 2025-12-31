@@ -1,19 +1,22 @@
 "use client";
 
 function handleSmoothScroll(e: React.MouseEvent<HTMLAnchorElement>) {
-  e.preventDefault();
   const href = e.currentTarget.getAttribute("href");
+  // 해시 링크인 경우에만 preventDefault 호출
   if (href?.startsWith("#")) {
+    e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   }
+  // 외부 링크인 경우 기본 동작(페이지 이동) 허용
 }
 
 export function Hero() {
   return (
     <section
+      id="about"
       className="hero-gradient min-h-screen flex items-center justify-center px-6 pt-16"
       style={{
         background:
@@ -37,7 +40,7 @@ export function Hero() {
         </p>
         <div className="flex justify-center">
           <a
-            href="#interview"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfIxOl0FwFpTRJ2F2ktaFOQLzpLwWxJPDXVfX-RD4uw0VeCwA/viewform"
             onClick={handleSmoothScroll}
             className="inline-flex items-center justify-center bg-stone-800 text-white px-10 py-4 rounded-full text-sm font-medium hover:bg-stone-700 transition shadow-lg"
           >
