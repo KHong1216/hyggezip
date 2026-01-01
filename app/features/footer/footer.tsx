@@ -19,7 +19,7 @@ export function Footer() {
         </a>
       </div>
       <p className="text-stone-300 text-[10px] uppercase tracking-widest">
-        &copy; 2024 hyggeip Research Lab. All rights reserved.
+        &copy; 2026 hyggeZip Research Lab. All rights reserved.
       </p>
     </footer>
   );
