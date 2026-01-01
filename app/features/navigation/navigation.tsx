@@ -40,7 +40,7 @@ export function Navigation() {
           onClick={handleSmoothScroll}
           className="text-2xl font-bold tracking-tighter text-stone-800"
         >
-          hygge<span className="text-amber-700">ip</span>
+          hygge<span className="text-amber-700">Zip</span>
         </a>
         <div className="hidden md:flex space-x-10 text-sm font-medium text-stone-600">
           {navLinks.map((link) => (
