@@ -15,7 +15,7 @@ const navLinks: NavLink[] = [
   { href: "#about", label: "About" },
   { href: "#mission", label: "Mission" },
   { href: "#research", label: "Research" },
-  { href: "#interview", label: "Interview", isActive: true },
+  { href: "#game", label: "Event", isActive: true },
 ];
 
 function handleSmoothScroll(e: React.MouseEvent<HTMLAnchorElement>) {
@@ -40,7 +40,7 @@ export function Navigation() {
           onClick={handleSmoothScroll}
           className="text-2xl font-bold tracking-tighter text-stone-800"
         >
-          hygge<span className="text-amber-700">Zip</span>
+          hygge<span className="text-amber-700">ip</span>
         </a>
         <div className="hidden md:flex space-x-10 text-sm font-medium text-stone-600">
           {navLinks.map((link) => (

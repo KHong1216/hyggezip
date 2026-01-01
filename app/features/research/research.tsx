@@ -9,7 +9,7 @@ const researchItems = [
 
 export function Research() {
   return (
-    <SectionContainer id="research" className="bg-stone-50">
+    <SectionContainer id="research" className="py-24 px-6 bg-stone-50">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div className="rounded-2xl overflow-hidden shadow-2xl">
           <img
@@ -43,5 +43,4 @@ export function Research() {
     </SectionContainer>
   );
 }
-
 

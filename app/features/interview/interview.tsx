@@ -64,22 +64,22 @@ export function Interview() {
 
         <div className="grid md:grid-cols-2 gap-6 text-left mb-16">
           <Card className="bg-transparent border-stone-800">
-            <CardContent className="p-6">
-              <h4 className="text-amber-500 text-xs font-bold mb-3 tracking-widest uppercase">
+            <CardContent className="p-8">
+              <h4 className="text-amber-500 text-xs font-bold mb-2 tracking-widest uppercase">
                 Target
               </h4>
-              <p className="text-base font-light text-stone-300 leading-relaxed">
+              <p className="text-sm font-light text-stone-400">
                 공간을 통해 삶의 변화를 경험한 분, 가구 컬렉터, 집에 진심인 모든
                 분
               </p>
             </CardContent>
           </Card>
           <Card className="bg-transparent border-stone-800">
-            <CardContent className="p-6">
-              <h4 className="text-amber-500 text-xs font-bold mb-3 tracking-widest uppercase">
+            <CardContent className="p-8">
+              <h4 className="text-amber-500 text-xs font-bold mb-2 tracking-widest uppercase">
                 Benefit
               </h4>
-              <p className="text-base font-light text-stone-300 leading-relaxed">
+              <p className="text-sm font-light text-stone-400">
                 휘게Zip 연구 레포트, 소정의 사례비 또는 가구 컨설팅권 제공
               </p>
             </CardContent>
@@ -114,7 +114,7 @@ export function Interview() {
             <Select
               value={formData.residenceType}
               onValueChange={(value) =>
-                setFormData({ ...formData, residenceType: value || "" })
+                setFormData({ ...formData, residenceType: value })
               }
             >
               <SelectTrigger className="w-full">
