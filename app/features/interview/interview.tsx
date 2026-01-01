@@ -114,7 +114,7 @@ export function Interview() {
             <Select
               value={formData.residenceType}
               onValueChange={(value) =>
-                setFormData({ ...formData, residenceType: value })
+                setFormData({ ...formData, residenceType: value ?? "" })
               }
             >
               <SelectTrigger className="w-full">
