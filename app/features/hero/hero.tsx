@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const heroImageUrl =
-  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=2070";
+  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=70&w=1600";
 
 export function Hero() {
   return (
@@ -14,7 +14,8 @@ export function Hero() {
         alt=""
         priority
         fill
-        sizes="100vw"
+        quality={70}
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1280px"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-stone-50/80" aria-hidden="true" />

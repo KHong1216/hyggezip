@@ -1,9 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface NavLink {
   href: string;
@@ -19,8 +14,6 @@ const navLinks: NavLink[] = [
 ];
 
 export function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -35,49 +28,50 @@ export function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className={cn(
+              className={[
                 "relative transition-colors",
                 link.isActive
                   ? "text-amber-700 font-bold underline underline-offset-4"
-                  : "nav-link hover:text-stone-900"
-              )}
+                  : "nav-link hover:text-stone-900",
+              ].join(" ")}
             >
               {link.label}
             </a>
           ))}
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-stone-600"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
-          aria-expanded={isMenuOpen}
-        >
-          {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
-      </div>
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-stone-100">
-          <div className="px-6 py-4 space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={cn(
-                  "block text-sm font-medium transition-colors",
-                  link.isActive
-                    ? "text-amber-700 font-bold"
-                    : "text-stone-600 hover:text-stone-900"
-                )}
-              >
-                {link.label}
-              </a>
-            ))}
+        <details className="md:hidden">
+          <summary
+            className="list-none cursor-pointer inline-flex items-center justify-center rounded-md size-9 text-stone-600 hover:bg-stone-100 transition"
+            aria-label="메뉴 열기/닫기"
+          >
+            <span className="sr-only">메뉴</span>
+            <span className="details-open:hidden">
+              <Menu className="h-5 w-5" />
+            </span>
+            <span className="hidden details-open:inline">
+              <X className="h-5 w-5" />
+            </span>
+          </summary>
+          <div className="absolute left-0 right-0 top-16 bg-white border-t border-stone-100">
+            <div className="px-6 py-4 space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={[
+                    "block text-sm font-medium transition-colors",
+                    link.isActive
+                      ? "text-amber-700 font-bold"
+                      : "text-stone-600 hover:text-stone-900",
+                  ].join(" ")}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        </details>
+      </div>
     </nav>
   );
 }
