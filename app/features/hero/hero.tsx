@@ -1,31 +1,25 @@
-"use client";
+import Image from "next/image";
 
-function handleSmoothScroll(e: React.MouseEvent<HTMLAnchorElement>) {
-  const href = e.currentTarget.getAttribute("href");
-  // 해시 링크인 경우에만 preventDefault 호출
-  if (href?.startsWith("#")) {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-  // 외부 링크인 경우 기본 동작(페이지 이동) 허용
-}
+const heroImageUrl =
+  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=2070";
 
 export function Hero() {
   return (
     <section
       id="about"
-      className="hero-gradient min-h-screen flex items-center justify-center px-6 pt-16"
-      style={{
-        background:
-          "linear-gradient(rgba(253, 252, 251, 0.8), rgba(253, 252, 251, 0.8)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=2070')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative min-h-screen flex items-center justify-center px-6 pt-16 overflow-hidden"
     >
-      <div className="max-w-4xl text-center fade-in">
+      <Image
+        src={heroImageUrl}
+        alt=""
+        priority
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-stone-50/80" aria-hidden="true" />
+
+      <div className="relative max-w-4xl text-center fade-in">
         <h2 className="text-stone-500 font-medium mb-4 tracking-widest uppercase text-sm">
           Hygge Archive & Curation
         </h2>
@@ -41,8 +35,9 @@ export function Hero() {
         <div className="flex justify-center">
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfIxOl0FwFpTRJ2F2ktaFOQLzpLwWxJPDXVfX-RD4uw0VeCwA/viewform"
-            onClick={handleSmoothScroll}
             className="inline-flex items-center justify-center bg-stone-800 text-white px-10 py-4 rounded-full text-sm font-medium hover:bg-stone-700 transition shadow-lg"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             인터뷰 참여하기
           </a>

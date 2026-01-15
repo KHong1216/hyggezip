@@ -18,17 +18,6 @@ const navLinks: NavLink[] = [
   { href: "#game", label: "Event", isActive: true },
 ];
 
-function handleSmoothScroll(e: React.MouseEvent<HTMLAnchorElement>) {
-  e.preventDefault();
-  const href = e.currentTarget.getAttribute("href");
-  if (href?.startsWith("#")) {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-}
-
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -36,8 +25,7 @@ export function Navigation() {
     <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
-          href="#"
-          onClick={handleSmoothScroll}
+          href="#about"
           className="text-2xl font-bold tracking-tighter text-stone-800"
         >
           hygge<span className="text-amber-700">Zip</span>
@@ -47,7 +35,6 @@ export function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              onClick={handleSmoothScroll}
               className={cn(
                 "relative transition-colors",
                 link.isActive
@@ -77,10 +64,7 @@ export function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => {
-                  handleSmoothScroll(e);
-                  setIsMenuOpen(false);
-                }}
+                onClick={() => setIsMenuOpen(false)}
                 className={cn(
                   "block text-sm font-medium transition-colors",
                   link.isActive

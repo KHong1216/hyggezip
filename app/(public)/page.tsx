@@ -2,7 +2,7 @@ import { Navigation } from "@/app/features/navigation/navigation";
 import { Hero } from "@/app/features/hero/hero";
 import { Mission } from "@/app/features/mission/mission";
 import { Research } from "@/app/features/research/research";
-import { Game } from "@/app/features/game/game";
+import { GameLazy } from "@/app/features/game/game-lazy";
 import { Footer } from "@/app/features/footer/footer";
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
       <Hero />
       <Mission />
       <Research />
-      <Game />
+      <GameLazy />
       <Footer />
     </>
   );
