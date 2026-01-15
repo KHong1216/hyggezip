@@ -33,6 +33,7 @@ const missionItems: MissionItem[] = [
 export function Mission() {
   return (
     <SectionContainer id="mission" className="bg-white">
+      <h2 className="sr-only">Mission</h2>
       <div className="grid md:grid-cols-3 gap-12 text-center">
         {missionItems.map((item, index) => (
           <Card

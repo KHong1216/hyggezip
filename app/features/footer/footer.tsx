@@ -6,7 +6,7 @@ export function Footer() {
       <div className="text-xl font-bold tracking-tighter text-stone-800 mb-4">
         hygge<span className="text-amber-700">Zip</span>
       </div>
-      <p className="text-stone-400 text-xs mb-6">
+      <p className="text-stone-500 text-xs mb-6">
         공간을 읽는 가구 큐레이션, 휘게Zip
       </p>
       <div className="flex justify-center space-x-6 text-stone-400 mb-8">
@@ -18,7 +18,7 @@ export function Footer() {
           <Instagram className="h-5 w-5" />
         </a>
       </div>
-      <p className="text-stone-300 text-[10px] uppercase tracking-widest">
+      <p className="text-stone-500 text-[10px] uppercase tracking-widest">
         &copy; 2026 hyggeZip Research Lab. All rights reserved.
       </p>
     </footer>

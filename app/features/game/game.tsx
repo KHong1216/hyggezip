@@ -114,7 +114,7 @@ export function Game() {
           되는 순간 멈춰주세요.
         </p>
 
-        <div className="bg-white/5 backdrop-blur-sm border border-stone-800 rounded-3xl p-12 max-w-lg mx-auto shadow-2xl">
+        <div className="bg-white/10 backdrop-blur-sm border border-stone-800 rounded-3xl p-12 max-w-lg mx-auto shadow-2xl">
           <div
             className={cn(
               "text-6xl md:text-8xl font-thin mb-12 tracking-tighter text-stone-200",
@@ -152,7 +152,7 @@ export function Game() {
             </Button>
             <button
               onClick={handleReset}
-              className="text-stone-500 text-sm underline underline-offset-4 opacity-50 hover:opacity-100 transition"
+              className="text-stone-300 text-sm underline underline-offset-4 hover:text-stone-200 transition"
               aria-label="게임 다시 시작"
             >
               RETRY
@@ -160,7 +160,7 @@ export function Game() {
           </div>
         </div>
 
-        <p className="mt-12 text-stone-500 text-sm font-light leading-relaxed">
+        <p className="mt-12 text-stone-300 text-sm font-light leading-relaxed">
           성공하신 분들은 스크린샷과 함께 인스타그램 @hyggeip를
           태그해주세요.
           <br />
