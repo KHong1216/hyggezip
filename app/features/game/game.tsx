@@ -153,6 +153,7 @@ export function Game() {
             <button
               onClick={handleReset}
               className="text-stone-500 text-sm underline underline-offset-4 opacity-50 hover:opacity-100 transition"
+              aria-label="게임 다시 시작"
             >
               RETRY
             </button>
